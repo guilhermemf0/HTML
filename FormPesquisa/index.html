@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulário de Pesquisa</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">Formulário de Pesquisa</h1>
+    <p id="description">Obrigado por dedicar seu tempo para nos ajudar a melhorar a plataforma.</p>
+
+    <form id="survey-form">
+      <label id="name-label">Nome
+        <input id="name" type="text" placeholder="Digite seu nome" required />
+      </label>
+
+      <label id="email-label">Email
+        <input id="email" type="email" placeholder="Digite seu email" required />
+      </label>
+
+      <label id="number-label">Idade (opcional)
+        <input id="number" type="number" min="13" max="120" placeholder="Digite sua idade" />
+      </label>
+
+      <label>Ocupação atual
+        <select id="dropdown" required>
+          <option disabled selected>Selecione sua ocupação</option>
+          <option>Estudante</option>
+          <option>Trabalho em tempo integral</option>
+          <option>Aprendiz em tempo integral</option>
+          <option>Prefiro não responder</option>
+          <option>Outro</option>
+        </select>
+      </label>
+
+      <fieldset class="field-group">
+        <legend>Você recomendaria o freeCodeCamp para um amigo?</legend>
+        <label><input name="recommend" type="radio" value="definitely" required /> Com certeza</label>
+        <label><input name="recommend" type="radio" value="maybe" /> Talvez</label>
+        <label><input name="recommend" type="radio" value="not-sure" /> Não tenho certeza</label>
+      </fieldset>
+
+      <label>Recurso favorito
+        <select required>
+          <option disabled selected>Selecione uma opção</option>
+          <option>Desafios</option>
+          <option>Projetos</option>
+          <option>Comunidade</option>
+          <option>Código aberto</option>
+        </select>
+      </label>
+
+      <fieldset class="field-group">
+        <legend>O que você gostaria que fosse melhorado?</legend>
+        <label><input type="checkbox" value="front-end-projects" /> Projetos Front-end</label>
+        <label><input type="checkbox" value="back-end-projects" /> Projetos Back-end</label>
+        <label><input type="checkbox" value="data-visualization" /> Visualização de Dados</label>
+        <label><input type="checkbox" value="challenges" /> Desafios</label>
+        <label><input type="checkbox" value="open-source-community" /> Comunidade Open Source</label>
+        <label><input type="checkbox" value="gitter-help-rooms" /> Salas de Ajuda</label>
+        <label><input type="checkbox" value="videos" /> Vídeos</label>
+        <label><input type="checkbox" value="city-meetups" /> Encontros Presenciais</label>
+        <label><input type="checkbox" value="wiki" /> Wiki</label>
+        <label><input type="checkbox" value="forum" /> Fórum</label>
+        <label><input type="checkbox" value="additional-courses" /> Cursos Adicionais</label>
+      </fieldset>
+
+      <label>Algum comentário ou sugestão?
+        <textarea id="comment" placeholder="Digite seu comentário aqui..."></textarea>
+      </label>
+
+      <input id="submit" type="submit" value="Enviar" />
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

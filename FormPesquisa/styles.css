@@ -1,0 +1,123 @@
+/* Fonte básica e fundo */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #ece9e6, #ffffff);
+  margin: 0;
+  padding: 0;
+}
+
+/* Container do formulário */
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease;
+}
+
+/* Título e descrição */
+h1, p {
+  text-align: center;
+  color: #333;
+  text-shadow: 1px 1px 2px #ccc;
+}
+
+/* Fade-in suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Labels e campos */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+/* Campos de texto, número, etc */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* Campo de texto grande */
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+/* Submit bonitão */
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Checkboxes e radios bonitos */
+.field-group {
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+
+.field-group legend {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Aqui está a correção dos radios e checkboxes */
+.field-group label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin: 5px 0;
+}
+
+.field-group input[type="radio"],
+.field-group input[type="checkbox"] {
+  margin: 0;
+  transform: scale(1.2);
+  accent-color: #4CAF50;
+  cursor: pointer;
+}
