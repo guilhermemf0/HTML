@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Guilherme Motta Franco" />
+    <title>Complete HTML/CSS Guide - By Guilherme Motta Franco</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
+</head>
+<body>
+    <button id="lang-toggle">EN/PT</button>
+
+    <nav id="navbar">
+        <header>
+            <h1><i class="fab fa-html5"></i> HTML/CSS Mastery</h1>
+        </header>
+        <div class="nav-links">
+            <a class="nav-link" href="#html-basics-en"><i class="fas fa-code"></i>HTML Basics</a>
+            <a class="nav-link" href="#css-fundamentals-en"><i class="fab fa-css3"></i>CSS Fundamentals</a>
+            <a class="nav-link" href="#semantic-html-en"><i class="fas fa-cube"></i>Semantic HTML</a>
+            <a class="nav-link" href="#layout-techniques-en"><i class="fas fa-th"></i>Layout Techniques</a>
+            <a class="nav-link" href="#responsive-design-en"><i class="fas fa-mobile-alt"></i>Responsive Design</a>
+            <a class="nav-link" href="#css-advanced-en"><i class="fas fa-rocket"></i>Advanced CSS</a>
+        </div>
+    </nav>
+
+    <main id="main-doc">
+        <!-- HTML Basics -->
+        <section class="main-section lang-en" id="html-basics-en">
+            <header><h1>HTML Basics</h1></header>
+            <div class="content-block">
+                <!-- English content -->
+            </div>
+        </section>
+        <section class="main-section lang-pt" id="html-basics-pt">
+            <header><h1>Básico do HTML</h1></header>
+            <div class="content-block">
+                <!-- Conteúdo em português -->
+            </div>
+        </section>
+
+        <!-- CSS Fundamentals -->
+        <section class="main-section lang-en" id="css-fundamentals-en">
+            <header><h1>CSS Fundamentals</h1></header>
+            <div class="content-block">
+                <!-- English content -->
+            </div>
+        </section>
+        <section class="main-section lang-pt" id="css-fundamentals-pt">
+            <header><h1>Fundamentos do CSS</h1></header>
+            <div class="content-block">
+                <!-- Conteúdo em português -->
+            </div>
+        </section>
+
+        <!-- Semantic HTML -->
+        <section class="main-section lang-en" id="semantic-html-en">
+            <header><h1>Semantic HTML</h1></header>
+            <div class="content-block">
+                <!-- English content -->
+            </div>
+        </section>
+        <section class="main-section lang-pt" id="semantic-html-pt">
+            <header><h1>HTML Semântico</h1></header>
+            <div class="content-block">
+                <!-- Conteúdo em português -->
+            </div>
+        </section>
+
+        <!-- Layout Techniques -->
+        <section class="main-section lang-en" id="layout-techniques-en">
+            <header><h1>Layout Techniques</h1></header>
+            <div class="content-block">
+                <!-- English content -->
+            </div>
+        </section>
+        <section class="main-section lang-pt" id="layout-techniques-pt">
+            <header><h1>Técnicas de Layout</h1></header>
+            <div class="content-block">
+                <!-- Conteúdo em português -->
+            </div>
+        </section>
+
+        <!-- Responsive Design -->
+        <section class="main-section lang-en" id="responsive-design-en">
+            <header><h1>Responsive Design</h1></header>
+            <div class="content-block"></div>
+        </section>
+        <section class="main-section lang-pt" id="responsive-design-pt">
+            <header><h1>Design Responsivo</h1></header>
+            <div class="content-block"></div>
+        </section>
+
+        <!-- Advanced CSS -->
+        <section class="main-section lang-en" id="css-advanced-en">
+            <header><h1>Advanced CSS</h1></header>
+            <div class="content-block"></div>
+        </section>
+        <section class="main-section lang-pt" id="css-advanced-pt">
+            <header><h1>CSS Avançado</h1></header>
+            <div class="content-block"></div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 Guilherme Motta Franco - Todos os direitos reservados</p>
+                <div class="contact-info">
+                    <p>Contato: 
+                        <a href="mailto:gui.mottafranco@gmail.com" class="email-btn">
+                            <i class="fas fa-envelope"></i> gui.mottafranco@gmail.com
+                        </a>
+                    </p>
+                </div>
+                <div class="social">
+                    <a href="https://github.com/guilhermemf0" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/guilherme-motta-977b94355/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:gui.mottafranco@gmail.com" class="email-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            hljs.highlightAll();
+
+            const langToggle = document.getElementById('lang-toggle');
+            const root = document.documentElement;
+
+            function updateLangDisplay(lang) {
+                document.querySelectorAll('.lang-en, .lang-pt').forEach(el => {
+                    el.style.display = el.classList.contains(`lang-${lang}`) ? 'block' : 'none';
+                });
+
+                // Update nav links
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    const href = link.getAttribute('href');
+                    const baseId = href.replace(/-(en|pt)$/, '');
+                    link.setAttribute('href', `${baseId}-${lang}`);
+                });
+            }
+
+            langToggle.addEventListener('click', () => {
+                const current = root.getAttribute('data-lang');
+                const next = current === 'en' ? 'pt' : 'en';
+                root.setAttribute('data-lang', next);
+                root.setAttribute('lang', next);
+                updateLangDisplay(next);
+                langToggle.textContent = next === 'en' ? 'EN/PT' : 'PT/EN';
+            });
+
+            // Initialize language display
+            updateLangDisplay(root.getAttribute('data-lang'));
+
+            // Scroll suave atualizado
+            document.addEventListener('click', function(e) {
+                const target = e.target.closest('a[href^="#"]');
+                if (target) {
+                    e.preventDefault();
+                    const id = target.getAttribute('href');
+                    const el = document.querySelector(id);
+                    if (el) {
+                        el.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
